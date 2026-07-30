@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANIL ESTATES - Real Estate Solutions</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TOP HEADER -->
+    <header class="top-header">
+        <div class="logo-container">
+            <div class="logo-icon">AE</div>
+            <div class="logo-text">
+                <h1>ANIL ESTATES</h1>
+                <p>An ISO 9001-2015 Certified Company</p>
+            </div>
+        </div>
+
+        <div class="header-info">
+            <div class="info-item">
+                <i class="fa-solid fa-phone"></i>
+                <div class="info-text">
+                    <span>Free Line For You</span>
+                    <strong>8978954154</strong>
+                </div>
+            </div>
+
+            <div class="info-item">
+                <i class="fa-solid fa-envelope"></i>
+                <div class="info-text">
+                    <span>Email Us</span>
+                    <strong>info@anilestates.com</strong>
+                </div>
+            </div>
+
+            
+        </div>
+    </header>
+
+    <!-- NAVIGATION BAR WITH SECTION TAGS -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li class="active"><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#careers">Careers</a></li>
+            <li><a href="#blog">Blog</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+
+        <div class="iso-badge">
+            <i class="fa-solid fa-award"></i>
+            <span>ISO 9001:2015 CERTIFIED</span>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="home">
+        <h2 class="hero-title">Committed to Excellence in Real Estate and Quality Services.</h2>
+
+        <form class="search-container" id="searchForm">
+            <select class="search-select" id="citySelect">
+                <option value="">All Cities</option>
+                <option value="Visakhapatnam">Visakhapatnam</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Bangalore">Bangalore</option>
+            </select>
+
+            <select class="search-select" id="locationSelect">
+                <option value="">All Locations</option>
+            </select>
+
+            <button type="submit" class="search-btn">
+                <i class="fa-solid fa-magnifying-glass"></i> Search
+            </button>
+        </form>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section class="about-section" id="about">
+        <div class="about-wrapper">
+            
+            <div class="about-header">
+                <span class="badge-title">CORPORATE PROFILE</span>
+                <h2>Pioneering Real Estate Innovation Across <span>3 Tri-States</span></h2>
+                <div class="header-line"></div>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-visuals">
+                    <div class="image-box main-img">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800" alt="Anil Estates Architecture">
+                    </div>
+                    <div class="secondary-img">
+                        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=600" alt="Real Estate Development">
+                    </div>
+                    <div class="states-floating-card">
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        <div>
+                            <h4>Tri-State Presence</h4>
+                            <p>AP • Telangana • Karnataka</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-info">
+                    <h3>Building Strategic Legacy Assets & High-Yield Properties</h3>
+                    <p class="lead-text">
+                        <strong>ANIL ESTATES</strong> is a premier ISO 9001:2015 certified real estate enterprise. We specialize in developing luxury gated communities, urban apartments, and high-appreciation open plot layouts strategically placed in fast-growing municipal zones.
+                    </p>
+
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="mission">Our Vision</button>
+                        <button class="tab-btn" data-tab="presence">3-State Operations</button>
+                        <button class="tab-btn" data-tab="guarantee">Legal Compliance</button>
+                    </div>
+
+                    <div class="tab-content active" id="mission">
+                        <p>We aim to democratize high-return real estate investments by building sustainable communities with smart infrastructure, clear titles, and long-term capital appreciation.</p>
+                    </div>
+
+                    <div class="tab-content" id="presence">
+                        <p>Our footprint spans prime economic corridors across <strong>Andhra Pradesh</strong> (Visakhapatnam), <strong>Telangana</strong> (Hyderabad), and <strong>Karnataka</strong> (Bangalore), giving investors access to prime regional growth centers.</p>
+                    </div>
+
+                    <div class="tab-content" id="guarantee">
+                        <p>Every layout and venture is fully backed by corresponding state authorities (AP RERA, TS RERA, and KT RERA), ensuring 100% legal clearance, bank loan approvals, and seamless property handovers.</p>
+                    </div>
+
+                    <div class="highlights-grid">
+                        <div class="highlight-item"><i class="fa-solid fa-shield-halved"></i> 100% Legal Transparency</div>
+                        <div class="highlight-item"><i class="fa-solid fa-chart-line"></i> High Capital Appreciation</div>
+                        <div class="highlight-item"><i class="fa-solid fa-city"></i> Smart Urban Layouts</div>
+                        <div class="highlight-item"><i class="fa-solid fa-users-gear"></i> Direct Registration Support</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Counter Bar -->
+            <div class="stats-bar">
+                <div class="stat-box">
+                    <i class="fa-solid fa-building"></i>
+                    <h3 class="counter" data-target="50">0</h3><span>+</span>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fa-solid fa-face-smile"></i>
+                    <h3 class="counter" data-target="10000">0</h3><span>+</span>
+                    <p>Satisfied Clients</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fa-solid fa-layer-group"></i>
+                    <h3 class="counter" data-target="15">0</h3><span>+</span>
+                    <p>Years of Trust</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fa-solid fa-map-pin"></i>
+                    <h3>3</h3>
+                    <p>States Covered</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- GALLERY SECTION -->
+    <section class="gallery-section" id="gallery">
+        <div class="gallery-container">
+            
+            <div class="about-header">
+                <span class="badge-title">PROJECT GALLERY</span>
+                <h2>Explore Our Premier <span>Developments</span></h2>
+                <div class="header-line"></div>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Showcase</button>
+                <button class="filter-btn" data-filter="residential">Residential</button>
+                <button class="filter-btn" data-filter="commercial">Commercial</button>
+                <button class="filter-btn" data-filter="plots">Open Plots</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div class="gallery-grid">
+                
+                <div class="gallery-item residential">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=600" alt="Luxury Apartments">
+                    <div class="gallery-overlay">
+                        <h4>Royal Palms Executive Apartments</h4>
+                        <p><i class="fa-solid fa-location-dot"></i> Visakhapatnam, AP</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item plots">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=600" alt="Open Plot Development">
+                    <div class="gallery-overlay">
+                        <h4>Green Valley Gated Plots</h4>
+                        <p><i class="fa-solid fa-location-dot"></i> Gachibowli, Hyderabad</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item commercial">
+                    <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600" alt="Commercial Complex">
+                    <div class="gallery-overlay">
+                        <h4>AE Trade Center</h4>
+                        <p><i class="fa-solid fa-location-dot"></i> Whitefield, Bangalore</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item residential">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600" alt="Modern Villas">
+                    <div class="gallery-overlay">
+                        <h4>Imperial Villa Community</h4>
+                        <p><i class="fa-solid fa-location-dot"></i> Rushikonda, Visakhapatnam</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item plots">
+                    <img src="https://images.unsplash.com/photo-1628624747186-a941c476b7ef?q=80&w=600" alt="Gated Plot Layout">
+                    <div class="gallery-overlay">
+                        <h4>Metro City Layouts</h4>
+                        <p><i class="fa-solid fa-location-dot"></i> Kondapur, Hyderabad</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item commercial">
+                    <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=600" alt="Corporate Spaces">
+                    <div class="gallery-overlay">
+                        <h4>AE Synergy Tech Park</h4>
+                        <p><i class="fa-solid fa-location-dot"></i> Electronic City, Bangalore</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- CUSTOMER REVIEWS SLIDER SECTION -->
+<section class="reviews-section" id="reviews">
+    <div class="reviews-container">
+        
+        <div class="about-header">
+            <span class="badge-title">CLIENT TESTIMONIALS</span>
+            <h2>What Our <span>Clients Say</span></h2>
+            <div class="header-line"></div>
+        </div>
+
+        <div class="reviews-carousel">
+            <button class="carousel-btn prev-btn" id="prevBtn">
+                <i class="fa-solid fa-chevron-left"></i>
+            </button>
+
+            <div class="reviews-track-container">
+                <ul class="reviews-track">
+                    
+                    <!-- Review 1 -->
+                    <li class="review-card active">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">"Buying our plot through Anil Estates was completely hassle-free. Clear titles, excellent guidance on regional growth, and prompt verification support. Highly recommended!"</p>
+                        <div class="client-info">
+                            <h4>Ramesh Verma</h4>
+                            <span>Property Investor, Visakhapatnam</span>
+                        </div>
+                    </li>
+
+                    <!-- Review 2 -->
+                    <li class="review-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="review-text">"Top-class service and complete legal transparency. They helped us navigate all RERA documentation smoothly without any hidden terms."</p>
+                        <div class="client-info">
+                            <h4>Priya Reddy</h4>
+                            <span>Homeowner, Hyderabad</span>
+                        </div>
+                    </li>
+
+                    <!-- Review 3 -->
+                    <li class="review-card">
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+                        </div>
+                        <p class="review-text">"Very professional real estate team in Bangalore. Outstanding communication and end-to-end assistance throughout the registration process."</p>
+                        <div class="client-info">
+                            <h4>Suresh Kumar</h4>
+                            <span>Commercial Buyer, Bangalore</span>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <button class="carousel-btn next-btn" id="nextBtn">
+                <i class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Carousel Dots -->
+        <div class="carousel-dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+
+    </div>
+</section>
+<!-- PROJECTS SECTION -->
+<section class="projects-section" id="projects">
+    <div class="projects-container">
+        
+        <div class="about-header">
+            <span class="badge-title">OUR PORTFOLIO</span>
+            <h2>Explore Featured <span>Properties</span></h2>
+            <div class="header-line"></div>
+        </div>
+
+        <!-- Status Filter Tabs -->
+        <div class="project-tabs">
+            <button class="project-tab-btn active" data-status="ongoing">
+                <i class="fa-solid fa-spinner"></i> On-Going Projects
+            </button>
+            <button class="project-tab-btn" data-status="completed">
+                <i class="fa-solid fa-circle-check"></i> Completed Projects
+            </button>
+        </div>
+
+        <!-- Projects Grid Container -->
+        <div class="projects-grid">
+            
+            <!-- PROJECT 1: ON-GOING -->
+            <div class="project-card ongoing">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=600" alt="Royal Palms Height">
+                    <span class="status-badge ongoing-badge">On-Going</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Royal Palms Residency</h3>
+                    <p class="project-location"><i class="fa-solid fa-location-dot"></i> Rushikonda, Visakhapatnam</p>
+                    
+                    <div class="project-specs">
+                        <div class="spec-item"><i class="fa-solid fa-bed"></i> <span>2 & 3 BHK</span></div>
+                        <div class="spec-item"><i class="fa-solid fa-ruler-combined"></i> <span>1250 - 1850 Sft</span></div>
+                        <div class="spec-item"><i class="fa-solid fa-compass"></i> <span>East & North Facing</span></div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="project-price">
+                            <label>Starting From</label>
+                            <strong>₹65 Lakhs*</strong>
+                        </div>
+                        <button class="enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 2: ON-GOING -->
+            <div class="project-card ongoing">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=600" alt="Green Valley Luxury Villas">
+                    <span class="status-badge ongoing-badge">On-Going</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Green Valley Luxury Villas</h3>
+                    <p class="project-location"><i class="fa-solid fa-location-dot"></i> Gachibowli, Hyderabad</p>
+                    
+                    <div class="project-specs">
+                        <div class="spec-item"><i class="fa-solid fa-house"></i> <span>3 & 4 BHK Villas</span></div>
+                        <div class="spec-item"><i class="fa-solid fa-ruler-combined"></i> <span>2400 - 3200 Sft</span></div>
+                        <div class="spec-item"><i class="fa-solid fa-compass"></i> <span>East Facing</span></div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="project-price">
+                            <label>Starting From</label>
+                            <strong>₹1.45 Cr*</strong>
+                        </div>
+                        <button class="enquire-btn">Enquire Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 3: COMPLETED -->
+            <div class="project-card completed" style="display: none;">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?q=80&w=600" alt="AE Heights Commercial">
+                    <span class="status-badge completed-badge">Completed</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">AE Synergy Heights</h3>
+                    <p class="project-location"><i class="fa-solid fa-location-dot"></i> Whitefield, Bangalore</p>
+                    
+                    <div class="project-specs">
+                        <div class="spec-item"><i class="fa-solid fa-building"></i> <span>2 & 3 BHK Luxury</span></div>
+                        <div class="spec-item"><i class="fa-solid fa-ruler-combined"></i> <span>1100 - 1650 Sft</span></div>
+                        <div class="spec-item"><i class="fa-solid fa-compass"></i> <span>North & West Facing</span></div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="project-price">
+                            <label>Sold Out Price</label>
+                            <strong>₹85 Lakhs</strong>
+                        </div>
+                        <button class="enquire-btn Secondary">Sold Out</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PROJECT 4: COMPLETED -->
+            <div class="project-card completed" style="display: none;">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=600" alt="Metro Layout">
+                    <span class="status-badge completed-badge">Completed</span>
+                </div>
+                <div class="project-content">
+                    <h3 class="project-title">Metro City Prime Plots</h3>
+                    <p class="project-location"><i class="fa-solid fa-location-dot"></i> PM Palem, Visakhapatnam</p>
+                    
+                    <div class="project-specs">
+                        <div class="spec-item"><i class="fa-solid fa-layer-group"></i> <span>Open Plots Layout</span></div>
+                        <div class="spec-item"><i class="fa-solid fa-ruler-combined"></i> <span>150 - 400 Sq.Yds</span></div>
+                        <div class="spec-item"><i class="fa-solid fa-compass"></i> <span>All Facings</span></div>
+                    </div>
+
+                    <div class="project-footer">
+                        <div class="project-price">
+                            <label>Delivered at</label>
+                            <strong>₹32 Lakhs</strong>
+                        </div>
+                        <button class="enquire-btn Secondary">Handed Over</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- CAREERS SECTION -->
+<section class="careers-section" id="careers">
+    <div class="careers-container">
+        
+        <div class="about-header">
+            <span class="badge-title">CAREER OPPORTUNITIES</span>
+            <h2>Join Our <span>Growing Team</span></h2>
+            <p class="section-subtitle">Build a rewarding career with one of the leading real estate brands across the Tri-State region.</p>
+            <div class="header-line"></div>
+        </div>
+
+        <!-- Job Vacancies Grid -->
+        <div class="careers-grid">
+
+            <!-- 1. Branch Manager (BM) -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="job-icon"><i class="fa-solid fa-user-tie"></i></div>
+                    <div>
+                        <h3 class="job-title">Branch Manager (BM)</h3>
+                        <span class="job-location"><i class="fa-solid fa-location-dot"></i> Visakhapatnam / Hyderabad</span>
+                    </div>
+                </div>
+                <div class="job-details">
+                    <p><i class="fa-solid fa-briefcase"></i> 5+ Years Experience</p>
+                    <p><i class="fa-solid fa-clock"></i> Full Time</p>
+                </div>
+                <p class="job-desc">Lead branch operations, manage team performance, and drive sales targets across residential and plot layouts.</p>
+                <button class="apply-btn" onclick="openApplyModal('Branch Manager (BM)')">Apply Now</button>
+            </div>
+
+            <!-- 2. Regional Manager (RM) -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="job-icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <div>
+                        <h3 class="job-title">Regional Manager (RM)</h3>
+                        <span class="job-location"><i class="fa-solid fa-location-dot"></i> Bangalore / Hyderabad</span>
+                    </div>
+                </div>
+                <div class="job-details">
+                    <p><i class="fa-solid fa-briefcase"></i> 7+ Years Experience</p>
+                    <p><i class="fa-solid fa-clock"></i> Full Time</p>
+                </div>
+                <p class="job-desc">Oversee regional growth strategies, build partner networks, and achieve strategic revenue goals.</p>
+                <button class="apply-btn" onclick="openApplyModal('Regional Manager (RM)')">Apply Now</button>
+            </div>
+
+            <!-- 3. Area Manager -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="job-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+                    <div>
+                        <h3 class="job-title">Area Manager</h3>
+                        <span class="job-location"><i class="fa-solid fa-location-dot"></i> Multiple Locations</span>
+                    </div>
+                </div>
+                <div class="job-details">
+                    <p><i class="fa-solid fa-briefcase"></i> 3+ Years Experience</p>
+                    <p><i class="fa-solid fa-clock"></i> Full Time</p>
+                </div>
+                <p class="job-desc">Manage local site operations, coordinate client site visits, and direct local field sales executives.</p>
+                <button class="apply-btn" onclick="openApplyModal('Area Manager')">Apply Now</button>
+            </div>
+
+            <!-- 4. Telecalling Executive -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="job-icon"><i class="fa-solid fa-headset"></i></div>
+                    <div>
+                        <h3 class="job-title">Telecalling Executive</h3>
+                        <span class="job-location"><i class="fa-solid fa-location-dot"></i> Visakhapatnam</span>
+                    </div>
+                </div>
+                <div class="job-details">
+                    <p><i class="fa-solid fa-briefcase"></i> 0-2 Years Experience</p>
+                    <p><i class="fa-solid fa-clock"></i> Full Time</p>
+                </div>
+                <p class="job-desc">Contact prospective buyers, explain real estate projects, handle inquiries, and schedule site visits.</p>
+                <button class="apply-btn" onclick="openApplyModal('Telecalling Executive')">Apply Now</button>
+            </div>
+
+            <!-- 5. Front Office Executive -->
+            <div class="job-card">
+                <div class="job-header">
+                    <div class="job-icon"><i class="fa-solid fa-building-user"></i></div>
+                    <div>
+                        <h3 class="job-title">Front Office Executive</h3>
+                        <span class="job-location"><i class="fa-solid fa-location-dot"></i> Visakhapatnam</span>
+                    </div>
+                </div>
+                <div class="job-details">
+                    <p><i class="fa-solid fa-briefcase"></i> 1+ Year Experience</p>
+                    <p><i class="fa-solid fa-clock"></i> Full Time</p>
+                </div>
+                <p class="job-desc">Greet visiting clients, manage front-desk calls, direct visitor queries, and support administrative tasks.</p>
+                <button class="apply-btn" onclick="openApplyModal('Front Office Executive')">Apply Now</button>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- CAREERS SECTION -->
+<section class="careers-section" id="careers">
+  <!-- ... existing careers content ... -->
+</section>
+
+<!-- APPLICATION MODAL FORM -->
+<div class="modal-overlay" id="applyModal">
+    <div class="modal-card career-modal">
+        <button class="close-modal-btn" onclick="closeApplyModal()">&times;</button>
+        <h3>Job Application</h3>
+        <p class="apply-role-text">Applying for: <strong id="selectedRoleName" class="role-highlight">---</strong></p>
+
+        <form class="application-form" id="careerForm">
+            <div class="form-group">
+                <input type="text" placeholder="Full Name *" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Email Address *" required>
+            </div>
+            <div class="form-group">
+                <input type="tel" placeholder="Phone Number *" required>
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="Years of Experience *" required>
+            </div>
+            <div class="form-group">
+                <label class="file-label">Resume / CV Link or Note:</label>
+                <input type="text" placeholder="Link to Resume or brief message">
+            </div>
+            <button type="submit" class="submit-app-btn">Submit Application</button>
+        </form>
+    </div>
+</div>
+<!-- FOUNDER BLOG / ABOUT ME SECTION -->
+<section class="founder-blog-section" id="founder-blog">
+    <div class="founder-container">
+        
+        <div class="founder-card">
+            <div class="founder-image-wrapper">
+                <img src="anil-kumar.jpeg" alt="ABOTHULA ANIL KUMAR - Founder & Managing Director">
+                <div class="founder-badge">
+                    <span>Founder & MD</span>
+                </div>
+            </div>
+
+            <div class="founder-content">
+                <span class="badge-title">LEADERSHIP & VISION</span>
+                <h2>Meet <span>ABOTHULA ANIL KUMAR</span></h2>
+                <h4 class="founder-subtitle">Managing Director, ANIL ESTATES</h4>
+                <div class="header-line-left"></div>
+
+                <p class="founder-text">
+                    Welcome to <strong>Anil Estates</strong>. As the founder, my core philosophy has always been built on two non-negotiable principles: <strong>uncompromising legal transparency</strong> and <strong>delivering high-value property appreciation</strong> to every client we serve.
+                </p>
+
+                <p class="founder-text">
+                    With years of dedication across Andhra Pradesh, Telangana, and Karnataka, we have transformed raw land into thriving residential communities and landmark commercial spaces. Whether you are searching for your dream home or a secure land investment, my team and I are committed to guiding you through every step with absolute trust and clear titles.
+                </p>
+
+                <!-- Core Leadership Highlights -->
+                <div class="founder-highlights">
+                    <div class="highlight-box">
+                        <i class="fa-solid fa-award"></i>
+                        <div>
+                            <h5>ISO Certified Quality</h5>
+                            <p>Adhering strictly to ISO 9001:2015 standards.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-box">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                        <div>
+                            <h5>100% RERA Approved</h5>
+                            <p>Complete legal verification & clear titles guaranteed.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="signature-block">
+                    <div class="signature-text">
+                        <h3>Abothula Anil Kumar</h3>
+                        <span>Managing Director, Anil Estates</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+    <script src="script.js"></script>
+<!-- FOOTER SECTION -->
+ <!-- FOOTER SLOGAN SCROLLER -->
+<div class="footer-slogan-ticker">
+    <div class="ticker-track">
+        <!-- Sequence 1 -->
+        <div class="ticker-item"><i class="fa-solid fa-house-chimney"></i> Building Your Dreams, Shaping the Future</div>
+        <div class="ticker-item"><i class="fa-solid fa-gem"></i> Premium Properties, Prime Locations</div>
+        <div class="ticker-item"><i class="fa-solid fa-handshake"></i> Trust, Legal Transparency & Excellence</div>
+        <div class="ticker-item"><i class="fa-solid fa-key"></i> Unlocking High Appreciation Investments</div>
+        <div class="ticker-item"><i class="fa-solid fa-city"></i> ISO 9001:2015 Certified Real Estate Excellence</div>
+
+        <!-- Sequence 2 (Duplicate for Seamless Endless Loop) -->
+        <div class="ticker-item"><i class="fa-solid fa-house-chimney"></i> Building Your Dreams, Shaping the Future</div>
+        <div class="ticker-item"><i class="fa-solid fa-gem"></i> Premium Properties, Prime Locations</div>
+        <div class="ticker-item"><i class="fa-solid fa-handshake"></i> Trust, Legal Transparency & Excellence</div>
+        <div class="ticker-item"><i class="fa-solid fa-key"></i> Unlocking High Appreciation Investments</div>
+        <div class="ticker-item"><i class="fa-solid fa-city"></i> ISO 9001:2015 Certified Real Estate Excellence</div>
+    </div>
+</div>
+<footer class="main-footer" id="contact">
+    <div class="footer-top">
+        <div class="footer-container">
+            
+            <!-- Column 1: Company Profile -->
+            <div class="footer-col">
+                <div class="footer-logo">
+                    <div class="logo-icon">AE</div>
+                    <div class="logo-text">
+                        <h3>ANIL ESTATES</h3>
+                        <p>ISO 9001:2015 Certified</p>
+                    </div>
+                </div>
+                <p class="footer-about">
+                    Premier real estate development enterprise delivering high-appreciation residential plots, luxury gated communities, and commercial spaces across Andhra Pradesh, Telangana, and Karnataka.
+                </p>
+                <div class="footer-socials">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#home"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+                    <li><a href="#about"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+                    <li><a href="#projects"><i class="fa-solid fa-angle-right"></i> Projects</a></li>
+                    <li><a href="#gallery"><i class="fa-solid fa-angle-right"></i> Gallery</a></li>
+                    <li><a href="javascript:void(0)" id="careersLink"><i class="fa-solid fa-angle-right"></i> Careers</a></li>
+                    <li><a href="#reviews"><i class="fa-solid fa-angle-right"></i> Testimonials</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: RERA Registrations -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Projects</h4>
+                <ul class="rera-list">
+                    <li><strong>TS:</strong>HYDERABAD</li>
+                    <li><strong>AP:</strong> VISAKHAPATNAM</li>
+                    <li><strong>KT:</strong> BANGALORE</li>
+                </ul>
+                <div class="iso-footer-badge">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>100% Legal Clearance Guarantee</span>
+                </div>
+            </div>
+
+            <!-- Column 4: Contact Details -->
+            <div class="footer-col">
+                <h4 class="footer-heading">Contact Us</h4>
+                <div class="contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>8978954154</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>info@anilestates.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Corporate Office: Visakhapatnam, Andhra Pradesh, India</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer-bottom">
+        <p>&copy; 2026 ANIL ESTATES. All Rights Reserved. Designed for Real Estate Excellence.</p>
+    </div>
+</footer>
+
+<!-- CAREERS MODAL POPUP -->
+<div class="modal-overlay" id="careersModal">
+    <div class="modal-card">
+        <button class="close-modal-btn" id="closeCareersModal">&times;</button>
+        <div class="modal-icon">
+            <i class="fa-solid fa-briefcase"></i>
+        </div>
+        <h3>Careers at ANIL ESTATES</h3>
+        <p class="status-msg">Currently, there are <strong>no job vacancies available</strong>.</p>
+        <p class="sub-msg">Thank you for your interest in joining our team! You can send your updated resume to <strong class="highlight-email">careers@anilestates.com</strong> for future opportunities.</p>
+        <button class="modal-btn" id="modalOkBtn">Got it</button>
+    </div>
+</div>
+<!-- AUTOMATIC LEAD CAPTURE POPUP -->
+<div class="lead-modal-overlay" id="leadModal">
+    <div class="lead-modal-card">
+        <button class="close-lead-btn" id="closeLeadModal">&times;</button>
+        
+        <div class="lead-modal-header">
+            <div class="lead-icon"><i class="fa-solid fa-house-user"></i></div>
+            <h3>Find Your Dream Property</h3>
+            <p>Get exclusive details, price lists, and free site visits from <strong>ANIL ESTATES</strong>.</p>
+        </div>
+
+        <form class="lead-form" id="leadForm">
+            <div class="form-group">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="clientName" placeholder="Full Name *" required>
+            </div>
+
+            <div class="form-group">
+                <i class="fa-solid fa-phone"></i>
+                <input type="tel" id="clientPhone" placeholder="Mobile Number *" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" required>
+            </div>
+
+            <div class="form-group">
+                <i class="fa-solid fa-location-dot"></i>
+                <select id="clientLocation" required>
+                    <option value="" disabled selected>Select Preferred Location *</option>
+                    <option value="Visakhapatnam">Visakhapatnam</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Other">Other Region</option>
+                </select>
+            </div>
+
+            <button type="submit" class="submit-lead-btn">Get Free Callback</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
