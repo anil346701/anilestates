@@ -367,7 +367,28 @@ document.getElementById("leadForm").addEventListener("submit", function (e) {
 document.getElementById("closeLeadModal").addEventListener("click", function() {
   document.getElementById("leadModal").style.display = "none";
 });
+// Example inside your projects rendering loop:
+const whatsappNumber = "918978954154"; // Country code 91 + your number
 
+// Encode the project title so it inserts automatically into the WhatsApp message
+const whatsappMessage = encodeURIComponent(
+  `Hello ANIL ESTATES, I am interested in getting details for project: ${project.title} (${project.location}). Please share more info!`
+);
+
+const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+// Add this button to your project card template:
+card.innerHTML = `
+  <img src="${project.image}" alt="${project.title}" style="width:100%; height:200px; object-fit:contain; background:#f8f9fa;">
+  <h3>${project.title}</h3>
+  <p><strong>Location:</strong> ${project.location}</p>
+  <p><strong>Price:</strong> ${project.price}</p>
+  
+  <!-- WHATSAPP DIRECT LINK BUTTON -->
+  <a href="${whatsappUrl}" target="_blank" class="whatsapp-card-btn">
+    <i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp
+  </a>
+`;
 
 
 
