@@ -1940,3 +1940,45 @@ a {
 .wa-btn i {
   font-size: 1.2rem;
 }
+
+/* ==========================================
+   COMPACT WHATSAPP BUTTON & PROJECT GRID
+   ========================================== */
+
+/* Grid layout: 3 columns on desktop, 1 on mobile */
+#projects-container {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+  gap: 20px !important;
+  justify-content: center !important;
+  padding: 10px 0 !important;
+}
+
+/* Compact WhatsApp Button */
+.wa-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 6px !important;
+  background-color: #25d366 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important; /* Smaller text size */
+  padding: 8px 16px !important;    /* Compact padding */
+  border-radius: 20px !important;  /* Pill style */
+  margin-top: 10px !important;
+  width: fit-content !important;   /* Prevents full-width stretch */
+  box-shadow: 0 2px 6px rgba(37, 211, 102, 0.3) !important;
+  transition: all 0.2s ease-in-out !important;
+}
+
+.wa-btn:hover {
+  background-color: #1ebc57 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4) !important;
+}
+
+.wa-btn i {
+  font-size: 1rem !important;
+}
