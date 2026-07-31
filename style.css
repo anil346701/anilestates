@@ -1650,3 +1650,95 @@ a {
 .submit-lead-btn:hover {
     opacity: 0.9;
 }
+/* Popup Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.65); /* Dark dim background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999; /* Forces popup to float on top of everything */
+}
+
+/* Modal Card Container */
+.modal-card {
+  background: #ffffff;
+  width: 90%;
+  max-width: 440px;
+  padding: 30px 25px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 18px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #666;
+}
+
+/* Form Styles */
+.modal-header h3 {
+  margin: 10px 0 5px 0;
+  font-size: 1.4rem;
+  color: #222;
+}
+
+.modal-header p {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.form-group i {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #d32f2f;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px 12px 12px 38px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #d32f2f;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: #b71c1c;
+}
