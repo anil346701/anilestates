@@ -637,42 +637,48 @@
     </div>
 </div>
 <!-- AUTOMATIC LEAD CAPTURE POPUP -->
-<form class="lead-form" id="leadForm">
-  <div class="form-group">
-    <i class="fa-solid fa-user"></i>
-    <input type="text" id="leadName" placeholder="Full Name *" required>
-  </div>
-
-  <div class="form-group">
-    <i class="fa-solid fa-phone"></i>
-    <input type="tel" id="leadPhone" placeholder="Mobile Number *" required>
-  </div>
-
-  <!-- YOUR UPDATED VIZAG LOCATION DROPDOWN -->
-  <div class="form-group">
-    <i class="fa-solid fa-location-dot"></i>
-    <select id="leadLocation" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
-      <option value="" disabled selected>Select Preferred Location *</option>
-      <option value="PM Palem">PM Palem</option>
-      <option value="Madhurawada">Madhurawada</option>
-      <option value="Gajuwaka">Gajuwaka</option>
-      <option value="MVP Colony">MVP Colony</option>
-      <option value="Seethammadhara">Seethammadhara</option>
-      <option value="Yendada">Yendada</option>
-      <option value="Pendurthi">Pendurthi</option>
-      <option value="Anakapalle">Anakapalle</option>
-      <option value="Bheemunipatnam (Bheemili)">Bheemunipatnam (Bheemili)</option>
-      <option value="Dwaraka Nagar">Dwaraka Nagar</option>
-      <option value="Other Area">Other Area</option>
-    </select>
-  </div>
-
-  <button type="submit" class="submit-btn" id="leadSubmitBtn">Get Free Callback</button>
-</form>
+<div id="leadModal" class="modal-overlay">
+  <div class="modal-card">
+    <button type="button" class="close-btn" id="closeLeadModal">&times;</button>
+    
+    <div class="modal-header">
+      <div class="lead-icon"><i class="fa-solid fa-house-user"></i></div>
+      <h3>Find Your Dream Property</h3>
+      <p>Get exclusive details, price lists, and free site visits from <strong>ANIL ESTATES</strong>.</p>
     </div>
-</div>
-<div id="projects-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px 0;">
-  <p>Loading projects...</p>
+
+    <form class="lead-form" id="leadForm">
+      <div class="form-group">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" id="leadName" placeholder="Full Name *" required>
+      </div>
+
+      <div class="form-group">
+        <i class="fa-solid fa-phone"></i>
+        <input type="tel" id="leadPhone" placeholder="Mobile Number *" required>
+      </div>
+
+      <div class="form-group">
+        <i class="fa-solid fa-location-dot"></i>
+        <select id="leadLocation" required>
+          <option value="" disabled selected>Select Preferred Location *</option>
+          <option value="PM Palem">PM Palem</option>
+          <option value="Madhurawada">Madhurawada</option>
+          <option value="Gajuwaka">Gajuwaka</option>
+          <option value="MVP Colony">MVP Colony</option>
+          <option value="Seethammadhara">Seethammadhara</option>
+          <option value="Yendada">Yendada</option>
+          <option value="Pendurthi">Pendurthi</option>
+          <option value="Anakapalle">Anakapalle</option>
+          <option value="Bheemunipatnam (Bheemili)">Bheemunipatnam (Bheemili)</option>
+          <option value="Dwaraka Nagar">Dwaraka Nagar</option>
+          <option value="Other Area">Other Area</option>
+        </select>
+      </div>
+
+      <button type="submit" class="submit-btn" id="leadSubmitBtn">Get Free Callback</button>
+    </form>
+  </div>
 </div>
 <script>
   document.getElementById("leadForm").addEventListener("submit", function (e) {
