@@ -1982,3 +1982,8 @@ a {
 .wa-btn i {
   font-size: 1rem !important;
 }
+
+<!-- COMPACT WHATSAPP BUTTON -->
+<a href="${whatsappUrl}" target="_blank" class="wa-btn">
+  <i class="fa-brands fa-whatsapp"></i> Enquire
+</a>
