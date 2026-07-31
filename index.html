@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#d32f2f">
     <title>ANIL ESTATES - Real Estate Solutions</title>
 
     <!-- Font Awesome Icons -->
@@ -769,5 +772,24 @@
       }
     });
 </script>
+    <!-- APP BOTTOM NAVIGATION BAR -->
+<div class="mobile-bottom-nav">
+  <a href="#home" class="nav-item active">
+    <i class="fa-solid fa-house"></i>
+    <span>Home</span>
+  </a>
+  <a href="#projects" class="nav-item">
+    <i class="fa-solid fa-building"></i>
+    <span>Projects</span>
+  </a>
+  <a href="tel:8978954154" class="nav-item call-btn">
+    <i class="fa-solid fa-phone"></i>
+    <span>Call Us</span>
+  </a>
+  <a href="#leadModal" onclick="document.getElementById('leadModal').style.display='flex'" class="nav-item highlight">
+    <i class="fa-solid fa-paper-plane"></i>
+    <span>Enquire</span>
+  </a>
+</div>
 </body>
 </html>
