@@ -389,6 +389,31 @@ card.innerHTML = `
     <i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp
   </a>
 `;
+// Function to render project cards
+projects.forEach(project => {
+  // Create WhatsApp pre-filled message
+  const message = encodeURIComponent(`Hi ANIL ESTATES, I am interested in ${project.title} located at ${project.location}. Please share complete details!`);
+  const whatsappUrl = `https://api.whatsapp.com/send?phone=918978954154&text=${message}`;
+
+  const cardHtml = `
+    <div class="project-card">
+      <img src="${project.image}" alt="${project.title}" style="width:100%; height:180px; object-fit:contain; background:#f9f9f9; border-radius:8px;">
+      
+      <h3 style="margin: 10px 0 5px 0;">${project.title}</h3>
+      <p style="margin:2px 0;"><strong>Location:</strong> ${project.location}</p>
+      <p style="margin:2px 0;"><strong>Type:</strong> ${project.type || 'Flat'}</p>
+      <p style="margin:2px 0; color:#d32f2f;"><strong>Price:</strong> ${project.price}</p>
+      
+      <!-- WHATSAPP BUTTON -->
+      <a href="${whatsappUrl}" target="_blank" class="wa-btn">
+        <i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp
+      </a>
+    </div>
+  `;
+  
+  // Append or assign to projects container
+  document.getElementById("projects-container").innerHTML += cardHtml;
+});
 
 
 
