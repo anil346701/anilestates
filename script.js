@@ -367,53 +367,115 @@ document.getElementById("leadForm").addEventListener("submit", function (e) {
 document.getElementById("closeLeadModal").addEventListener("click", function() {
   document.getElementById("leadModal").style.display = "none";
 });
-// Example inside your projects rendering loop:
-const whatsappNumber = "918978954154"; // Country code 91 + your number
+// ============================================================
+// 1. FETCH & DISPLAY PROJECTS WITH WHATSAPP BUTTONS
+// ============================================================
+const STEIN_PROJECTS_URL = "https://api.steinhq.com/v1/storages/6a6c606492b1163e972650aa/Sheet1";
 
-// Encode the project title so it inserts automatically into the WhatsApp message
-const whatsappMessage = encodeURIComponent(
-  `Hello ANIL ESTATES, I am interested in getting details for project: ${project.title} (${project.location}). Please share more info!`
-);
+fetch(STEIN_PROJECTS_URL)
+  .then(response => response.json())
+  .then(data => {
+    const container = document.getElementById("projects-container");
+    if (!container) return;
 
-const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+    container.innerHTML = ""; // Clear existing static cards
 
-// Add this button to your project card template:
-card.innerHTML = `
-  <img src="${project.image}" alt="${project.title}" style="width:100%; height:200px; object-fit:contain; background:#f8f9fa;">
-  <h3>${project.title}</h3>
-  <p><strong>Location:</strong> ${project.location}</p>
-  <p><strong>Price:</strong> ${project.price}</p>
-  
-  <!-- WHATSAPP DIRECT LINK BUTTON -->
-  <a href="${whatsappUrl}" target="_blank" class="whatsapp-card-btn">
-    <i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp
-  </a>
-`;
-// Function to render project cards
-projects.forEach(project => {
-  // Create WhatsApp pre-filled message
-  const message = encodeURIComponent(`Hi ANIL ESTATES, I am interested in ${project.title} located at ${project.location}. Please share complete details!`);
-  const whatsappUrl = `https://api.whatsapp.com/send?phone=918978954154&text=${message}`;
+    data.forEach(project => {
+      // Build WhatsApp dynamic URL
+      const whatsappNumber = "918978954154";
+      const message = encodeURIComponent(
+        `Hi ANIL ESTATES, I am interested in ${project.title || 'a property'} located at ${project.location || 'Vizag'}. Please share complete details!`
+      );
+      const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${message}`;
 
-  const cardHtml = `
-    <div class="project-card">
-      <img src="${project.image}" alt="${project.title}" style="width:100%; height:180px; object-fit:contain; background:#f9f9f9; border-radius:8px;">
-      
-      <h3 style="margin: 10px 0 5px 0;">${project.title}</h3>
-      <p style="margin:2px 0;"><strong>Location:</strong> ${project.location}</p>
-      <p style="margin:2px 0;"><strong>Type:</strong> ${project.type || 'Flat'}</p>
-      <p style="margin:2px 0; color:#d32f2f;"><strong>Price:</strong> ${project.price}</p>
-      
-      <!-- WHATSAPP BUTTON -->
-      <a href="${whatsappUrl}" target="_blank" class="wa-btn">
-        <i class="fa-brands fa-whatsapp"></i> Enquire on WhatsApp
-      </a>
-    </div>
-  `;
-  
-  // Append or assign to projects container
-  document.getElementById("projects-container").innerHTML += cardHtml;
-});
+      // Create card element
+      const card = document.createElement("div");
+      card.className = "project-card";
+      card.style.cssText = "background:#fff; border-radius:12px; padding:15px; box-shadow:0 4px 12px rgba(0,0,0,0.08); text-align:left; border:1px solid #eee;";
+
+      card.innerHTML = `
+        <img src="${project.image}" alt="${project.title}" style="width:100%; height:180px; object-fit:contain; background:#f9f9f9; border-radius:8px; display:block;">
+        
+        <h3 style="margin: 12px 0 6px 0; font-size:1.2rem; color:#222;">${project.title}</h3>
+        <p style="margin: 4px 0; color:#555; font-size:0.95rem;"><strong>Location:</strong> ${project.location}</p>
+        <p style="margin: 4px 0; color:#555; font-size:0.95rem;"><strong>Type:</strong> ${project.type || 'Flat'}</p>
+        <p style="margin: 4px 0; color:#d32f2f; font-weight:bold; font-size:1rem;"><strong>Price:</strong> ${project.price}</p>
+        
+        <!-- WHATSAPP DIRECT LINK BUTTON -->
+        <a href="${whatsappUrl}" target="_blank" style="display:flex; align-items:center; justify-content:center; gap:8px; background-color:#25d366; color:#ffffff; text-decoration:none; font-weight:bold; padding:10px; border-radius:6px; margin-top:12px; font-size:0.9rem;">
+          <i class="fa-brands fa-whatsapp" style="font-size:1.2rem;"></i> Enquire on WhatsApp
+        </a>
+      `;
+
+      container.appendChild(card);
+    });
+  })
+  .catch(err => console.error("Error fetching projects:", err));
 
 
+// ============================================================
+// 2. LEAD FORM SUBMISSION TO GOOGLE SHEETS (STEIN HQ)
+// ============================================================
+const leadForm = document.getElementById("leadForm");
+if (leadForm) {
+  leadForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
+    const submitBtn = document.getElementById("leadSubmitBtn");
+    if (submitBtn) {
+      submitBtn.innerText = "Sending...";
+      submitBtn.disabled = true;
+    }
+
+    const nameVal = document.getElementById("leadName") ? document.getElementById("leadName").value : "";
+    const phoneVal = document.getElementById("leadPhone") ? document.getElementById("leadPhone").value : "";
+    const locationVal = document.getElementById("leadLocation") ? document.getElementById("leadLocation").value : "";
+    const currentDate = new Date().toLocaleString();
+
+    const formData = [
+      {
+        name: nameVal,
+        phone: phoneVal,
+        location: locationVal,
+        date: currentDate
+      }
+    ];
+
+    const STEIN_LEADS_URL = "https://api.steinhq.com/v1/storages/6a6c606492b1163e972650aa/Leads";
+
+    fetch(STEIN_LEADS_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(res => res.json())
+      .then(data => {
+        alert("Thank you! We will get back to you shortly.");
+        leadForm.reset();
+        
+        const modal = document.getElementById("leadModal");
+        if (modal) modal.style.display = "none";
+      })
+      .catch(err => {
+        console.error("Submission Error:", err);
+        alert("Something went wrong. Please try again.");
+      })
+      .finally(() => {
+        if (submitBtn) {
+          submitBtn.innerText = "Get Free Callback";
+          submitBtn.disabled = false;
+        }
+      });
+  });
+}
+
+// Modal Close Listener
+const closeBtn = document.getElementById("closeLeadModal");
+if (closeBtn) {
+  closeBtn.addEventListener("click", function () {
+    const modal = document.getElementById("leadModal");
+    if (modal) modal.style.display = "none";
+  });
+}
