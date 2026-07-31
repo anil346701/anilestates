@@ -1915,4 +1915,28 @@ a {
 .whatsapp-card-btn i {
   font-size: 1.2rem;
 }
+/* WhatsApp Button inside Card */
+.wa-btn {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #25d366;
+  color: #ffffff !important;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 12px;
+  text-align: center;
+  font-size: 0.9rem;
+  transition: background 0.2s ease-in-out;
+}
 
+.wa-btn:hover {
+  background-color: #1ebc57;
+}
+
+.wa-btn i {
+  font-size: 1.2rem;
+}
