@@ -317,3 +317,51 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+document.getElementById("leadForm").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const submitBtn = document.getElementById("leadSubmitBtn");
+  submitBtn.innerText = "Sending...";
+  submitBtn.disabled = true;
+
+  const nameVal = document.getElementById("leadName").value;
+  const phoneVal = document.getElementById("leadPhone").value;
+  const locationVal = document.getElementById("leadLocation").value;
+  const currentDate = new Date().toLocaleString();
+
+  const formData = [
+    {
+      name: nameVal,
+      phone: phoneVal,
+      location: locationVal,
+      date: currentDate
+    }
+  ];
+
+  const STEIN_LEADS_URL = "https://api.steinhq.com/v1/storages/6a6c606492b1163e972650aa/Leads";
+
+  fetch(STEIN_LEADS_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(formData)
+  })
+    .then(res => res.json())
+    .then(data => {
+      alert("Thank you! We will get back to you shortly.");
+      document.getElementById("leadForm").reset();
+      
+      const modal = document.getElementById("leadModal");
+      if (modal) modal.style.display = "none";
+    })
+    .catch(err => {
+      console.error("Submission Error:", err);
+      alert("Something went wrong. Please try again.");
+    })
+    .finally(() => {
+      submitBtn.innerText = "Get Free Callback";
+      submitBtn.disabled = false;
+    });
+});
+
