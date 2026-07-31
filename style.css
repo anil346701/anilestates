@@ -1742,3 +1742,64 @@ a {
 .submit-btn:hover {
   background: #b71c1c;
 }
+
+/* ==========================================
+   MOBILE & TABLET RESPONSIVE STYLES
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+  /* Prevent horizontal scrolling/overflow */
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Make containers fit mobile screens smoothly */
+  .container, section, #projects-container {
+    width: 100% !important;
+    padding-left: 15px !important;
+    padding-right: 15px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Stack project cards vertically & center them */
+  #projects-container {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 20px !important;
+  }
+
+  /* Full-width property cards for crisp mobile viewing */
+  #projects-container > div {
+    width: 100% !important;
+    max-width: 350px !important;
+    margin: 0 auto !important;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08) !important;
+  }
+
+  /* Ensure card images adapt without clipping */
+  #projects-container img {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: contain !important;
+    background: #f8f9fa;
+  }
+
+  /* Adjust Pop-up Modal sizing for mobile screens */
+  .modal-card {
+    width: 92% !important;
+    padding: 20px 15px !important;
+    border-radius: 12px !important;
+  }
+
+  .modal-header h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .form-group input, 
+  .form-group select {
+    font-size: 16px !important; /* Prevents auto-zoom on iOS safari */
+    padding: 10px 10px 10px 35px !important;
+  }
+}
