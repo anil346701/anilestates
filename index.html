@@ -637,46 +637,93 @@
     </div>
 </div>
 <!-- AUTOMATIC LEAD CAPTURE POPUP -->
-<div class="lead-modal-overlay" id="leadModal">
-    <div class="lead-modal-card">
-        <button class="close-lead-btn" id="closeLeadModal">&times;</button>
-        
-        <div class="lead-modal-header">
-            <div class="lead-icon"><i class="fa-solid fa-house-user"></i></div>
-            <h3>Find Your Dream Property</h3>
-            <p>Get exclusive details, price lists, and free site visits from <strong>ANIL ESTATES</strong>.</p>
-        </div>
+<form class="lead-form" id="leadForm">
+  <div class="form-group">
+    <i class="fa-solid fa-user"></i>
+    <input type="text" id="leadName" placeholder="Full Name *" required>
+  </div>
 
-        <form class="lead-form" id="leadForm">
-            <div class="form-group">
-                <i class="fa-solid fa-user"></i>
-                <input type="text" id="clientName" placeholder="Full Name *" required>
-            </div>
+  <div class="form-group">
+    <i class="fa-solid fa-phone"></i>
+    <input type="tel" id="leadPhone" placeholder="Mobile Number *" required>
+  </div>
 
-            <div class="form-group">
-                <i class="fa-solid fa-phone"></i>
-                <input type="tel" id="clientPhone" placeholder="Mobile Number *" pattern="[0-9]{10}" title="Please enter a valid 10-digit mobile number" required>
-            </div>
+  <div class="form-group">
+  <i class="fa-solid fa-location-dot"></i>
+  <select id="leadLocation" required style="width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;">
+    <option value="" disabled selected>Select Preferred Location *</option>
+    <option value="PM Palem">PM Palem</option>
+    <option value="Madhurawada">Madhurawada</option>
+    <option value="Gajuwaka">Gajuwaka</option>
+    <option value="MVP Colony">MVP Colony</option>
+    <option value="Seethammadhara">Seethammadhara</option>
+    <option value="Yendada">Yendada</option>
+    <option value="Pendurthi">Pendurthi</option>
+    <option value="Anakapalle">Anakapalle</option>
+    <option value="Bheemunipatnam (Bheemili)">Bheemunipatnam (Bheemili)</option>
+    <option value="Dwaraka Nagar">Dwaraka Nagar</option>
+    <option value="Other Area">Other Area</option>
+  </select>
+</div>
 
-            <div class="form-group">
-                <i class="fa-solid fa-location-dot"></i>
-                <select id="clientLocation" required>
-                    <option value="" disabled selected>Select Preferred Location *</option>
-                    <option value="Visakhapatnam">Visakhapatnam</option>
-                    <option value="Hyderabad">Hyderabad</option>
-                    <option value="Bangalore">Bangalore</option>
-                    <option value="Other">Other Region</option>
-                </select>
-            </div>
-
-            <button type="submit" class="submit-lead-btn">Get Free Callback</button>
-        </form>
+  <button type="submit" class="submit-btn" id="leadSubmitBtn">Get Free Callback</button>
+</form>
     </div>
 </div>
 <div id="projects-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px 0;">
   <p>Loading projects...</p>
 </div>
- <script>
+<script>
+  document.getElementById("leadForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const submitBtn = document.getElementById("leadSubmitBtn");
+    submitBtn.innerText = "Sending...";
+    submitBtn.disabled = true;
+
+    const nameVal = document.getElementById("leadName").value;
+    const phoneVal = document.getElementById("leadPhone").value;
+    const locationVal = document.getElementById("leadLocation").value;
+    const currentDate = new Date().toLocaleString();
+
+    const formData = [
+      {
+        name: nameVal,
+        phone: phoneVal,
+        location: locationVal,
+        date: currentDate
+      }
+    ];
+
+    const STEIN_LEADS_URL = "https://api.steinhq.com/v1/storages/6a6c606492b1163e972650aa/Leads";
+
+    fetch(STEIN_LEADS_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    })
+      .then(response => response.json())
+      .then(data => {
+        alert("Thank you! We have received your request and will call you back shortly.");
+        document.getElementById("leadForm").reset();
+        
+        // Hide the popup modal
+        const modal = document.getElementById("leadModal");
+        if (modal) modal.style.display = "none";
+      })
+      .catch(error => {
+        console.error("Error submitting lead:", error);
+        alert("Something went wrong. Please try again.");
+      })
+      .finally(() => {
+        submitBtn.innerText = "Get Free Callback";
+        submitBtn.disabled = false;
+      });
+  });
+</script>
+    <script>
   const API_URL = "https://api.steinhq.com/v1/storages/6a6c606492b1163e972650aa/Sheet1";
 
   fetch(API_URL)
