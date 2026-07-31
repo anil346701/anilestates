@@ -1803,3 +1803,92 @@ a {
     padding: 10px 10px 10px 35px !important;
   }
 }
+/* ==========================================
+   APP-LIKE MOBILE UX ENHANCEMENTS
+   ========================================== */
+
+@media screen and (max-width: 768px) {
+  /* Prevent accidental page zooming & unwanted text highlighting */
+  body {
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    padding-bottom: 70px !important; /* Space for bottom bar */
+  }
+
+  /* Smooth app scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Hide default scrollbars for clean UI */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* App Bottom Navigation Bar */
+  .mobile-bottom-nav {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #ffffff;
+    box-shadow: 0 -3px 12px rgba(0, 0, 0, 0.12);
+    z-index: 9999;
+    justify-content: space-around;
+    align-items: center;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+  }
+
+  .mobile-bottom-nav .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #666;
+    font-size: 11px;
+    font-weight: 600;
+    transition: transform 0.1s ease;
+  }
+
+  .mobile-bottom-nav .nav-item i {
+    font-size: 18px;
+    margin-bottom: 3px;
+  }
+
+  /* Active/Touch effects */
+  .mobile-bottom-nav .nav-item:active {
+    transform: scale(0.9);
+  }
+
+  .mobile-bottom-nav .nav-item.highlight i,
+  .mobile-bottom-nav .nav-item.highlight span {
+    color: #d32f2f;
+  }
+
+  /* Pull-down modal sheet style on mobile */
+  .modal-card {
+    border-radius: 20px 20px 0 0 !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    animation: slideUp 0.3s ease-out;
+  }
+
+  @keyframes slideUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+}
+
+/* Hide navigation bar on desktop screens */
+@media screen and (min-width: 769px) {
+  .mobile-bottom-nav {
+    display: none !important;
+  }
+}
+
+
