@@ -364,4 +364,10 @@ document.getElementById("leadForm").addEventListener("submit", function (e) {
       submitBtn.disabled = false;
     });
 });
+document.getElementById("closeLeadModal").addEventListener("click", function() {
+  document.getElementById("leadModal").style.display = "none";
+});
+
+
+
 
