@@ -673,7 +673,10 @@
         </form>
     </div>
 </div>
- <script>
+<div id="projects-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 20px 0;">
+  <p>Loading projects...</p>
+</div>
+    <script>
   const API_URL = "https://api.steinhq.com/v1/storages/6a6c606492b1163e972650aa/Sheet1";
 
   fetch(API_URL)
